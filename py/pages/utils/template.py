@@ -2,7 +2,10 @@ import os
 import json
 import streamlit as st
 
-path_to_templates = '../templates'
+path_to_templates = os.path.dirname(os.getcwd())
+print(os.getcwd)
+print(os.path.dirname(os.getcwd()))
+print(os.path.dirname(os.path.dirname(os.getcwd())))
 
 def parse_json(file_content):
     try:
