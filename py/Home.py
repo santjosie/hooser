@@ -80,7 +80,11 @@ def extract_user_story():
         with col_copy:
             copy_to_clipboard = st.button(label="Copy to clipboard :clipboard:")
             if copy_to_clipboard:
-                pyperclip.copy(st.session_state['user_story'])
+                try:
+                    pyperclip.copy(st.session_state['user_story'])
+                except pyperclip.PyperclipException:
+                    st.warning("Copying currently not working for Linux deployments")
+
         with col_push:
             push_to_jira = st.button(label="Push to Jira :twisted_rightwards_arrows:")
             if push_to_jira:
