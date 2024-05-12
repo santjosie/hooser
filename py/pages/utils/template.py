@@ -3,9 +3,6 @@ import json
 import streamlit as st
 
 path_to_templates = 'templates'
-print(os.getcwd)
-print(os.path.dirname(os.getcwd()))
-print(os.path.dirname(os.path.dirname(os.getcwd())))
 
 def parse_json(file_content):
     try:
@@ -26,8 +23,6 @@ def parse_json(file_content):
         return template_instructions_str
 
 def set_template_instrutions(template_name):
-    st.success("os.getcwd" + str(os.getcwd))
-    st.success("os.path.dirname(os.getcwd())" + str(os.path.dirname(os.getcwd())))
     template_file = os.path.join(path_to_templates, template_name.lower().replace(' ','_')) + '.json'
     try:
         with open(template_file,'r') as f:
