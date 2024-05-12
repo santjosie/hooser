@@ -1,0 +1,22 @@
+{
+  "name": "Stafford",
+  "writing_guidelines": "Use Shakespearean language. Be poetic.",
+  "sections": [
+    {
+      "name": "Title",
+      "instruction": "This is a short sentence that describes the user story. Written from the perspective of the user and what their needs are."
+    },
+    {
+      "name": "One-liner",
+      "instruction": "Do not show the heading for this section. An expansion on the title, giving a bit more information regarding the goals of the user. Also written from the perspective of the user. Can introduce the context. Focus is on the final need of the user that needs to be achieved in the specified setting. The format in which it needs to be written is As a <user>, I want to <action they want to take>, so that <why they want to take that action>. Example - As a recruiter, I want to update the status of a ticket that I am working on so that the candidate is informed of the current status of the ticket."
+    },
+    {
+      "name": "Context",
+      "instruction": "At times, a user story would be introducing a change to an existing system. Or there might be some background to why a specific user story is being worked on. Use this section to provide relevant context and background."
+    },
+    {
+      "name": "Process flow",
+      "instruction": "A numbered list depicting each user interaction and system responses in the user flow."
+    }
+  ]
+}
