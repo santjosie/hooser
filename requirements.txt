@@ -1,7 +1,5 @@
 streamlit
 replicate
 transformers
-os
 pyperclip
-json
 requests
