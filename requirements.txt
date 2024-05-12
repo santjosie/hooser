@@ -3,3 +3,5 @@ replicate
 transformers
 pyperclip
 requests
+gtk
+PyQt4
