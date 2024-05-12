@@ -1,0 +1,26 @@
+{
+  "name": "Krispy",
+  "writing_guidelines": "Use simple language. Keep sentences short. Avoid redundancy. Limit adjectives and adverbs.",
+  "sections": [
+    {
+      "name": "Title",
+      "instruction": "This is a short sentence that describes the user story. Written from the perspective of the user and what their needs are. The format in which it needs to be written is <User> <verb> <what they are doing>. Example - Recruiter updates the status of a ticket"
+    },
+    {
+      "name": "One-liner",
+      "instruction": "Do not show the heading for this section. An expansion on the title, giving a bit more information regarding the goals of the user. Also written from the perspective of the user. Can introduce the context. Focus is on the final need of the user that needs to be achieved in the specified setting. The format in which it needs to be written is As a <user>, I want to <action they want to take>, so that <why they want to take that action>. Example - As a recruiter, I want to update the status of a ticket that I am working on so that the candidate is informed of the current status of the ticket."
+    },
+    {
+      "name": "Context",
+      "instruction": "At times, a user story would be introducing a change to an existing system. Or there might be some background to why a specific user story is being worked on. Use this section to provide relevant context and background."
+    },
+    {
+      "name": "Process flow",
+      "instruction": "A numbered list depicting each user interaction and system responses in the user flow."
+    },
+    {
+      "name": "Specifications",
+      "instruction": "While the core of the user story focuses on the user and their primary need, the user story issue also needs to contain mandatory specifications if any. These could include information about the specific capabilities that need to be supported - for instance, ability to add and edit information, but prevent the deletion of information. Use Crisp writing style when adding this information in. Any formulas for calculation of values, behaviour of page on interactions etc. should be specified here."
+    }
+  ]
+}
