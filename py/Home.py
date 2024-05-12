@@ -78,8 +78,7 @@ def extract_user_story():
     if 'user_story' in st.session_state:
         col_spacer, col_copy, col_push = st.columns([0.5, 0.3, 0.2])
         with col_copy:
-            copy_to_clipboard = st.button(label="Copy to clipboard :clipboard:",
-                                          on_click=pyperclip.copy(st.session_state['user_story']))
+            copy_to_clipboard = st.button(label="Copy to clipboard :clipboard:")
             if copy_to_clipboard:
                 pyperclip.copy(st.session_state['user_story'])
         with col_push:
