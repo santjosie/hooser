@@ -2,7 +2,7 @@ import os
 import json
 import streamlit as st
 
-path_to_templates = str(os.path.dirname(os.getcwd()))
+path_to_templates = 'templates'
 print(os.getcwd)
 print(os.path.dirname(os.getcwd()))
 print(os.path.dirname(os.path.dirname(os.getcwd())))
