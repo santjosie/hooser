@@ -2,7 +2,7 @@ import os
 import json
 import streamlit as st
 
-path_to_templates = 'templates'
+path_to_templates = os.path.join(os.path.dirname(os.getcwd()),'templates')
 
 def parse_json(file_content):
     try:
@@ -28,7 +28,6 @@ def set_template_instrutions(template_name):
         with open(template_file,'r') as f:
             file_content = f.read()
     except FileNotFoundError as e:
-        print("Template " + template_name + " not found. " + str(e))
         st.error("Template not found.")
     else:
         template_instructions_str = parse_json(file_content)

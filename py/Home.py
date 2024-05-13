@@ -5,13 +5,15 @@ import os
 from pages.utils import template as t
 from pages.utils import atlassian as atlas
 import pyperclip
+from replicate.client import Client
 
 
 def user_api_token():
-    replicate_api_token = st.text_input('Enter your Replicate API token:', type='password')
-    if not (replicate_api_token.startswith('r8_') and len(replicate_api_token) == 40):
-        st.warning('Please enter your Replicate API token.', icon='⚠')
-    return replicate_api_token
+    with st.expander("Replicate configuration"):
+        replicate_api_token = st.text_input('Enter your Replicate API token:', type='password')
+        if not (replicate_api_token.startswith('r8_') and len(replicate_api_token) == 40):
+            st.warning('Please enter your Replicate API token.', icon='⚠')
+        return replicate_api_token
 
 def replicate_token():
     try:
@@ -38,8 +40,9 @@ def hooser_config():
 
 def sidebar():
     with st.sidebar:
-        replicate_token()
         hooser_config()
+        replicate_token()
+        atlas.configure_atlassian()
 
 
 def main_header():
@@ -65,7 +68,7 @@ def generate_arctic_response():
         st.stop()
 
     prompt = st.session_state['template_instructions'] + '\n' + st.session_state['prompt']
-
+    replicate = Client(api_token=os.environ['REPLICATE_API_TOKEN'])
     for event in replicate.stream('snowflake/snowflake-arctic-instruct',
                                      input={'top_p': st.session_state['top_p'],
                                             'prompt': prompt,
@@ -103,6 +106,9 @@ def input_prompt():
                 extract_user_story()
 
         if lc_prompt:
+            if not(os.environ['REPLICATE_API_TOKEN'].startswith('r8_') and len(os.environ['REPLICATE_API_TOKEN']) == 40):
+                st.error("Enter a valid Replicate token to generate the user story")
+                st.stop()
             st.session_state['prompt'] = lc_prompt
             lc_response = generate_arctic_response()
             if 'user_story' in st.session_state:
