@@ -2,3 +2,4 @@
 py/.streamlit/secrets.toml
 py/pages/utils/.streamlit/secrets.toml
 py/.python-version
+.streamlit

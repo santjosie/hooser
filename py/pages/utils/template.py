@@ -2,7 +2,7 @@ import os
 import json
 import streamlit as st
 
-path_to_templates = os.path.join(os.path.dirname(os.getcwd()),'templates')
+path_to_templates = os.path.join(os.getcwd(),'templates')
 
 def parse_json(file_content):
     try:
@@ -35,8 +35,6 @@ def set_template_instrutions(template_name):
 
 def list_templates():
     template_files = []
-    print("THe path " + path_to_templates)
-    st.error("Path is " + path_to_templates)
     for filename in os.listdir(path_to_templates):
         if filename.endswith(".json"):
             with open(os.path.join(path_to_templates,filename)) as f:
