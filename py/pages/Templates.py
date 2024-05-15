@@ -34,26 +34,26 @@ def template_form(template):
 	main_col, section_col = st.columns(2)
 	with main_col:
 		with st.container(border=True):
-			f_template_name = st.text_input(label="Template name", value=template_name)
-			f_writing_guidelines = st.text_area("Writing style guidelines", value=writing_guidelines)
-			submitted = st.button("Save")
+			f_template_name = st.text_input(label="Template name", value=template_name, disabled=True)
+			f_writing_guidelines = st.text_area("Writing style guidelines", value=writing_guidelines, disabled=True)
+			submitted = st.button("Save", disabled=True)
 			if submitted:
 				st.write("Save")
 
 	with section_col:
 		with st.container(border=True):
 			st.subheader("Sections")
-			st.button(":orange-background[Add section :heavy_plus_sign:]")
+			st.button(":orange-background[Add section :heavy_plus_sign:]", disabled=True)
 			for section_name, section_instruction in zip(section_names, section_instructions):
 				with st.expander(label=section_name):
-					st.text_input(label="Enter a title for the section", value=section_name)
-					st.text_area(label="Enter an instruction", value=section_instruction)
+					st.text_input(label="Enter a title for the section", value=section_name, disabled=True)
+					st.text_area(label="Enter an instruction", value=section_instruction, disabled=True)
 					spacer_col, del_col, save_col = st.columns([0.7, 0.15, 0.15])
 					with del_col:
-						st.button(key="del-" + section_name, label=":red-background[:wastebasket:]")
+						st.button(key="del-" + section_name, label=":red-background[:wastebasket:]", disabled=True)
 
 					with save_col:
-						save = st.button(key="upd-" + section_name, label=":green-background[:floppy_disk:]")
+						save = st.button(key="upd-" + section_name, label=":green-background[:floppy_disk:]", disabled=True)
 						if save:
 							st.write("Save hit")
 
