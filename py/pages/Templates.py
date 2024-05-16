@@ -23,7 +23,7 @@ def template_form(template):
 			with open(os.path.join(t.path_to_templates,filename),'r') as f:
 				file_content = f.read()
 				if (json.loads(file_content)["name"] == template):
-					template_name = json.loads(file_content)["name"] 
+					template_name = json.loads(file_content)["name"]
 					writing_guidelines = json.loads(file_content)["writing_guidelines"]
 					section_names=[]
 					section_instructions=[]

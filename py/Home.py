@@ -43,6 +43,7 @@ def sidebar():
         hooser_config()
         replicate_token()
         atlas.configure_atlassian()
+        st.session_state['snow'] = st.checkbox("Celebratory snow?", value=False, help="Along with the user story, generate some snowflakes as well, to bring the temperatures down")
 
 
 def main_header():
@@ -110,6 +111,8 @@ def input_prompt():
                 st.error("Enter a valid Replicate token to generate the user story")
                 st.stop()
             st.session_state['prompt'] = lc_prompt
+            if st.session_state['snow']:
+                st.snow()
             lc_response = generate_arctic_response()
             if 'user_story' in st.session_state:
                 del st.session_state['user_story']
