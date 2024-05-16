@@ -9,6 +9,7 @@ def update_section():
 		print("Save")
 
 def template_selector():
+	st.info("Editing and creating templates are currently disabled as the feature is being stabilized. Pick from one of the pre-defined templates for experimentation.")
 	template = st.selectbox(label='Pick a template',
 							options= t.list_templates(),
 							index=0,
@@ -22,7 +23,7 @@ def template_form(template):
 			with open(os.path.join(t.path_to_templates,filename),'r') as f:
 				file_content = f.read()
 				if (json.loads(file_content)["name"] == template):
-					template_name = json.loads(file_content)["name"]
+					template_name = json.loads(file_content)["name"] 
 					writing_guidelines = json.loads(file_content)["writing_guidelines"]
 					section_names=[]
 					section_instructions=[]
